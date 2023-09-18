@@ -1,0 +1,16 @@
+$red: red;
+$green: green;
+$blue: blue;
+$width: 100;
+
+@mixin box($color, $multiplier: 1) {
+  .box-#{$color}-#{$multiplier * $width} {
+    aspect-ratio: 1 / 1;
+    background: $color;
+    width: $width * $multiplier * 1px;
+  }
+}
+
+@include box($red);
+@include box($green, 1.5);
+@include box($blue, 2);

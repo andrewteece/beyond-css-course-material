@@ -1,19 +1,19 @@
-.card {
-  font-size: 1.25rem;
-  color: #234;
-}
-.card::before {
-  position: relative;
-}
-.card::before::before {
-  content: "";
-  position: absolute;
-  left: -4rem;
-  top: -4rem;
+.box-red-100 {
+  aspect-ratio: 1/1;
+  background: red;
   width: 100px;
-  aspect-ratio: 1;
-  border-left: 3px solid #123;
-  border-top: 3px solid #123;
+}
+
+.box-green-150 {
+  aspect-ratio: 1/1;
+  background: green;
+  width: 150px;
+}
+
+.box-blue-200 {
+  aspect-ratio: 1/1;
+  background: blue;
+  width: 200px;
 }
 
 /*# sourceMappingURL=main.css.map */
