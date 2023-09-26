@@ -1,3 +1,19 @@
+@mixin gradient($deg, $clr-1, $clr-2) {
+  background-image: linear-gradient($deg, $clr-1, $clr-2);
+}
+
+@mixin pseudo-underline($width, $height, $background-color, $margin) {
+  width: $width;
+  height: $height;
+  background-color: $background-color;
+  margin: $margin, auto;
+
+  &::after {
+    content: '';
+    display: block;
+  }
+}
+
 body {
   font-family: system-ui;
   margin: 0;
@@ -8,4 +24,8 @@ body {
 .section-three {
   text-align: center;
   padding: 10vh 0;
+}
+
+.title {
+  @include pseudo-underline(5rem, 0.4rem, black, 2rem);
 }

@@ -1,9 +1,15 @@
+$clr-primary-100: #f8f7f7;
+$clr-primary-800: #201e1f;
+$clr-accent-400: #da3f0b;
+
 * {
   box-sizing: border-box;
   margin: 0;
 }
 
 body {
+  background-color: $clr-primary-100;
+  color: $clr-primary-800;
   font-size: 1.75rem;
   font-family: system-ui, sans-serif;
   line-height: 1.6;
@@ -19,12 +25,44 @@ body {
   gap: 0.75em;
   width: min(90%, 60rem);
   padding: 2em;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 2rem $clr-primary-800;
+
+  &__title {
+    color: $clr-accent-400;
+  }
 }
 
 .btn {
   display: inline-block;
   padding: 0.5em 1.5em;
   text-decoration: none;
+  border-radius: 7px;
+  transition: all 300ms ease-in-out;
+
+  &--primary {
+    background-color: $clr-accent-400;
+    color: $clr-primary-100;
+
+    &:hover,
+    &:focus {
+      background-color: $clr-primary-800;
+      box-shadow: 0 0 1rem $clr-accent-400;
+    }
+  }
+
+  &--outline {
+    background-color: $clr-primary-100;
+    color: $clr-accent-400;
+    outline: 1px solid $clr-accent-400;
+
+    &:hover,
+    &:focus {
+      background-color: $clr-primary-800;
+      color: $clr-primary-100;
+      box-shadow: 0 0 1rem $clr-accent-400;
+    }
+  }
 }
 
 .flex-group {

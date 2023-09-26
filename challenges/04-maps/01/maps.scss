@@ -1,0 +1,36 @@
+@use 'sass:color';
+@use 'sass:map';
+
+$colors: (
+  'primary': #1b6bd5,
+  'secondary': #4a1ab0,
+  'accent': #d97614,
+);
+
+@function clr($color) {
+  $output-color: map.get($colors, $color);
+
+  @if $output-color != null {
+    @return $output-color;
+  } @else {
+    @error 'that is not a key in the $colors map';
+  }
+}
+
+@function high-contrast($input) {
+  $color: clr($input);
+  @if (color.lightness($color) < 50) {
+    @return white;
+  } @else {
+    @return black;
+  }
+}
+
+@mixin good-color($color) {
+  background-color: clr($color);
+  color: high-contrast($color);
+}
+
+.example {
+  @include good-color(primary);
+}

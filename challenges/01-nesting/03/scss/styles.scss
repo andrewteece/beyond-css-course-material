@@ -43,9 +43,21 @@ section {
   padding: 1em 2em;
   cursor: pointer;
   border: 0;
+  border-radius: 10px;
   text-decoration: none;
   text-transform: uppercase;
   // your code here
+
+  .surface-primary &,
+  .surface-secondary & {
+    background: white;
+    color: $clr-secondary-500;
+  }
+
+  .surface-accent & {
+    background: black;
+    color: white;
+  }
 }
 
 .text-subdued {
